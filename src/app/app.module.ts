@@ -7,19 +7,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import {MatListModule} from '@angular/material/list'; 
+import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input'; 
+import { PokeBrowserComponent } from './poke-browser/poke-browser.component';
+import { SearchBarComponent } from './search-bar/search-bar.component'; 
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    PokeBrowserComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
