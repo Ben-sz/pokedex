@@ -14,54 +14,40 @@ interface Pokemons {
   styleUrls: ['./poke-browser.component.css']
 })
 export class PokeBrowserComponent implements OnInit {
-  pokeList : any;
-  results: any[]; 
-  pokeTypes = [] as any;
+/*   pokeList : any; */
+  /* results: any[];  */
   pokemonList = [] as any;
-  pokeItemData =  {} as Pokemons;
-  newPoke : any[];
+ /*  pokeItemData =  {} as Pokemons; */
   qurl : string;
-  typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+
 
 
   constructor(private pokeDataService: PokeDataService) {
-    
    }
 
   ngOnInit(): void {
-    console.log(typeof(this. pokemonList));
-    this.getPokemonList();
 
+    this.getPokemonList();
+    console.log(this.getPokemons());
   }
 
-   /* Gather all pokemons in a certain type */
-   getPokemonList(){
+   /* Gather the data of all pokemons in a certain type */
 
+   getPokemonList(){
     const that = this;
     this.pokeDataService.fillPokemonList().then(data => {
-      console.log("dataaa", data);
       data.json().then(function(jsonDat){
-              console.log("typeof", jsonDat);
-      
-/* 
-              that.pokeDataService.getPokemonByID(this.pokeList.results[i].url) */
 
+
+              /* gather data from each pokemon and push into an array */
+              /* add additional key for caught information */
               Object.keys(jsonDat.results).forEach(element => {
-
                 that.pokeDataService.getPokemonByID(jsonDat.results[element].url).then(resp =>
                   {
                     resp.json().then(function(pokemon){
-                    console.log(element)
                     pokemon.caught = false;
                     that.pushPokemons(pokemon);
-                    
-                    /* if the pokemon has 2 types, add both */
-         //           let pokeTypes = (typeof(pokemon as any).types[1] === "undefined" ?
-       //                             (pokemon as any).types[0].type.name  : 
-     //                               /* if pokemon has 1 type, add only one */
-    //                                [(pokemon as any).types[0].type.name, (pokemon as any).types[1].type.name]); 
-                    
-
+    
                     })
 
                   }
@@ -79,19 +65,12 @@ export class PokeBrowserComponent implements OnInit {
   }
 
     pushPokemons(any){
-/* 
-      this.pokeItemData.name = newName;
-      this.pokeItemData.types = newType; */
       this.pokemonList.push(any);
-      console.log(this.pokemonList)
-  /* 
-      console.log(this.pokeTypes); */
-      /* this.pokeTypes.push(newData);  */
- /*      console.log("pokeTypes", this.pokeTypes);  */
-
-      
     }
 
+    getPokemons(){
+      return this.pokemonList;
+    }
 
 
 

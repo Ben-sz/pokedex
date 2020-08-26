@@ -20,7 +20,6 @@ export class MainComponent implements OnInit {
   getTypeList(){
       this.pokeDataService.fillTypeList().subscribe(data => {
         this.pokeTypes = data;
-        console.log("all",data);
     });
   }
 
