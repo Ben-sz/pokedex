@@ -13,13 +13,14 @@ export class MainComponent implements OnInit {
   constructor(private pokeDataService: PokeDataService) { }
 
   ngOnInit(): void {
-    this.getPokeList();
+    this.getTypeList();
   }
 
   /* Gather all pokemon types */
-  getPokeList(){
+  getTypeList(){
       this.pokeDataService.fillTypeList().subscribe(data => {
         this.pokeTypes = data;
+        console.log("all",data);
     });
   }
 
