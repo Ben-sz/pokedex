@@ -1,6 +1,6 @@
 <p>poke-browser works!</p>
 <mat-selection-list #pokeItems [multiple]="false">
-  <mat-list-option *ngFor="let pokeItem of this.pokemonList" [value]="pokeItem.name">
+  <mat-list-option *ngFor="let pokeItem of this.pokeDataService.pokemonList" [value]="pokeItem.name">
     {{pokeItem.name}}
   </mat-list-option>
 </mat-selection-list>
