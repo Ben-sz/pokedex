@@ -39,3 +39,9 @@ line-height: 80%;
   display: flex;
   justify-content: center;
 }
+
+.mat-h3, .mat-subheading-2, .mat-typography h3 {
+
+  padding: 5px;
+  margin: 0 0 1px
+}

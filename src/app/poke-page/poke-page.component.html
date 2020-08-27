@@ -7,6 +7,15 @@
         <h2><span>#</span>{{pokemon.id}}</h2>
         <h2><span>Name: </span>{{pokemon.name}}</h2>
         <h2><span>Weight: </span>{{pokemon.weight}}</h2>
+
+        <h2><span>Weight: </span>{{pokemon.weight}}</h2>
+        <h2><span>Abilities: </span></h2>
+
+        <div class="abilities"*ngFor="let ab of pokemon.abilities, let i = index" >
+          <h3 *ngIf="ab.is_hidden == false" style="margin: 0 0 1px" >  {{ab.ability.name}} </h3>
+        </div> 
+        
+
       </div>
 
       
