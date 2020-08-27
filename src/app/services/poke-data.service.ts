@@ -12,6 +12,7 @@ import { Observable, of } from 'rxjs';
 export class PokeDataService {
   pokemonList = [] as any;
   qurl : string;
+  
 
   constructor(private http : HttpClient) { }
 
@@ -39,7 +40,7 @@ export class PokeDataService {
                 that.getPokemonByID(jsonDat.results[element].url).then(resp =>
                   {
                     resp.json().then(function(pokemon){
-                    pokemon.caught = false;
+                    pokemon.caught = Math.random() >= 0.5;
                     that.pushPokemons(pokemon);
                     })
                   }
@@ -48,7 +49,6 @@ export class PokeDataService {
       }
     )});
   }
-
 
 
   pushPokemons(any){

@@ -5,16 +5,22 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(values: any[], type: string): any[] {
+  transform(values: any[], type: string, checkForCaught: boolean): any[] {
 
     
-
-
+    console.log("őőő", checkForCaught);
+    /* check for caught flag, if requested */
+    if (true){
+      values = values.filter(function (element) {
+         return element.caught;
+      });
+    };
 
     /* Filters list of pokemons depending on their type*/
     /* If pokemon has 2 types check if any is equal to type*/
     /* If pokemon has 1 types check if it is equal to type*/
     /* else false */
+    console.log("vlaueitt", values)
 
     values = values.filter(function (element) {
         if  (element.types[1] !== undefined && (element.types[0].type.name == type || element.types[1].type.name == type)){
@@ -27,10 +33,11 @@ export class FilterPipe implements PipeTransform {
           return false;
         }
     });
+    console.log("meg itt", values)
     
     return values;
 
-  }
+    }
   
 
 

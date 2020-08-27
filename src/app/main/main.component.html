@@ -3,8 +3,8 @@
 <div class="main-wrapper">
   
     <div class="browser-wrapper">
-      <app-search-bar></app-search-bar>
-      <app-poke-browser #browser [selectedOption]="types.selectedOptions.selected[0]?.value"></app-poke-browser>
+      <app-search-bar #searchbar (caughtFilter)="browser.toggleFilter($event)" ></app-search-bar>
+      <app-poke-browser #browser [selectedOption]="types.selectedOptions.selected[0]?.value" [_caughtFilter]="searchbar.caughtFilter"></app-poke-browser>
     </div>
 
 
