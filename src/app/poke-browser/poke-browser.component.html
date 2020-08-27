@@ -6,11 +6,9 @@
    <mat-spinner class="spinner-div" *ngIf="!this.pokeDataService.loadedFlag"></mat-spinner>  
 
 
-
-
 <!-- Div for filtered list of pokemons -->
 
-<div class="pokebrowser-wrapper">
+<div *ngIf="this.pokeDataService.loadedFlag" class="pokebrowser-wrapper">
     <div class="pokecard" *ngFor="let pokeItem of this.pokeDataService.pokemonList | filterType: selectedOption:this.pokeDataService.flagOnlyChecked: this.pokeDataService.searchString " (click)="navigateTo(pokeItem.id)"
     
     [ngClass]="{'isCaught': pokeItem.caught,'notCaught': !pokeItem.caught}"
