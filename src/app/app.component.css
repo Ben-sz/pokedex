@@ -1,0 +1,25 @@
+.header-wrapper{
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  display: flex;
+
+
+  flex-direction: column;
+  justify-content: center;
+  background: #e63946;
+}
+
+.header-wrapper h1{
+  font-weight: 500;
+  font-size: 40px;
+  color: white;
+  padding-top: 15px;
+}
+
+.header-wrapper a{
+  font-size: 20px;
+  color: #f1faee;
+  margin-bottom: 5px;
+  line-height: 130%;
+}

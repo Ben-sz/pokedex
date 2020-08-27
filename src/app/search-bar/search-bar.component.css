@@ -1,0 +1,15 @@
+.search-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+.width{
+  max-width: 80%;
+}
+
+mat-slide-toggle{
+  margin: 5px; 
+}
