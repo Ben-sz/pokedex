@@ -36,6 +36,8 @@ export class PokeBrowserComponent implements OnInit {
     this._caughtFilter = e.value; */
     
     /* reloading to apply filter */
+
+    console.log("browservben vagyunk", e)
     setTimeout(() => this._reload = false);
     setTimeout(() => this._reload = true);
   }

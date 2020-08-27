@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { PokeDataService } from '../services/poke-data.service';
+
 
 @Component({
   selector: 'app-search-bar',
@@ -10,9 +12,7 @@ export class SearchBarComponent implements OnInit {
   @Output() caughtFilter = new EventEmitter<boolean>();
 
 
-  constructor(
-    
-  ) { }
+  constructor(public pokeDataService: PokeDataService  ) { }
 
   ngOnInit(): void {
     this.onlyCheckedUpdate();
@@ -20,7 +20,10 @@ export class SearchBarComponent implements OnInit {
 
 
   onlyCheckedUpdate(){
-    this.caughtFilter.emit(true);
+    /* this.caughtFilter.emit(this.onlyCaught); */
+    
+    this.pokeDataService.toggleCheck();
+    console.log("updatelt ertek", this.pokeDataService.flagOnlyChecked);
     
   }
 

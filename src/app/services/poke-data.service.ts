@@ -12,6 +12,8 @@ import { Observable, of } from 'rxjs';
 export class PokeDataService {
   pokemonList = [] as any;
   qurl : string;
+
+  flagOnlyChecked : boolean = true;
   
 
   constructor(private http : HttpClient) { }
@@ -68,6 +70,9 @@ export class PokeDataService {
     this.pokemonList[foundIndex].caught = true;
   }
 
+  toggleCheck(){
+    this.flagOnlyChecked = !this.flagOnlyChecked;
+  }
   
 
 }
