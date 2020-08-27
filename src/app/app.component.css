@@ -2,12 +2,13 @@
   margin-right: auto;
   margin-left: auto;
   align-items: center;
+  width: 100vw;
   display: flex;
-
-
   flex-direction: column;
   justify-content: center;
   background: #e63946;
+
+  /* width: 100%; */
 }
 
 .header-wrapper h1{

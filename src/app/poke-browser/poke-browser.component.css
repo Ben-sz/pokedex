@@ -6,6 +6,10 @@
   margin-right: auto;
   margin-top: 10px ;
   align-content: flex-end;
+
+  max-height: 500px;
+  overflow-y: scroll;
+  
 }
 
 .pokecard{
