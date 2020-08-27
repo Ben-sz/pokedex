@@ -1,12 +1,38 @@
 
 
 
-<mat-selection-list #pokeItems [multiple]="false" (selectionChange)="navigateTo($event.option.value)">
+<!-- <mat-selection-list #pokeItems [multiple]="false" (selectionChange)="navigateTo($event.option.value)">
   <mat-list-option *ngFor="let pokeItem of this.pokeDataService.pokemonList | filterType: selectedOption:this.pokeDataService.flagOnlyChecked "
       [value]="pokeItem.id">
       {{pokeItem.name}} {{pokeItem.caught}}
   </mat-list-option>
 </mat-selection-list>
+
+
+ -->
+<div class="pokebrowser-wrapper">
+    <div class="pokecard" *ngFor="let pokeItem of this.pokeDataService.pokemonList | filterType: selectedOption:this.pokeDataService.flagOnlyChecked " (click)="navigateTo(pokeItem.id)"
+    
+  
+
+    [ngClass]="{'isCaught': pokeItem.caught,'notCaught': !pokeItem.caught}"
+    
+    >
+        <div class="tags">
+         
+          <h2>#{{pokeItem.id}} </h2>
+         <h1>{{pokeItem.name}} </h1>
+
+
+        </div>
+        <div class="imgcont">
+          <img *ngIf="pokeItem.sprites.front_default"  [src]="pokeItem.sprites.front_default" alt="">
+
+        </div>
+  
+    </div>  
+
+</div>
 
 
 
