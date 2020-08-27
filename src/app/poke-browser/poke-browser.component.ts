@@ -25,10 +25,6 @@ export class PokeBrowserComponent implements OnInit {
   }
 
 
-  modifyFilter(){
-
-  }
-
    /* function to navigate to correct pokemon page */ 
   navigateTo(id: number){
 
