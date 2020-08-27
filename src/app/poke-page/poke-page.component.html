@@ -1,5 +1,7 @@
 
-<div class="pokemonpage-wrapper">
+<div  class="pokemonpage-wrapper"
+  [ngClass]="{'isCaught': pokemon.caught,'notCaught': !pokemon.caught}"
+>
 
   <img *ngIf="pokemon.sprites.front_default"  [src]="pokemon.sprites.front_default" alt="">
       <div *ngIf="pokemon" class="pokemonpage">
@@ -15,11 +17,13 @@
           <h3 *ngIf="ab.is_hidden == false" style="margin: 0 0 1px" >  {{ab.ability.name}} </h3>
         </div> 
         
-
       </div>
 
       
 </div>
 <div class="catcher">
-  <button mat-raised-button (click)="catchPokemon(pokemon.id)">Catch</button>
+  <button *ngIf="!pokemon.caught" mat-raised-button (click)="catchPokemon(pokemon.id)">Catch</button>
+  <button *ngIf="pokemon.caught" mat-raised-button (click)="releasePokemon(pokemon.id)">Release</button>
+
+  
 </div>

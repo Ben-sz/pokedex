@@ -6,10 +6,8 @@
   margin-right: auto;
   margin-top: 10px ;
   align-content: flex-end;
-
   max-height: 500px;
   overflow-y: scroll;
-  
 }
 
 .pokecard{
@@ -69,3 +67,11 @@
   opacity: 0.5;
 }
 
+
+
+.spinner-div{
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+}

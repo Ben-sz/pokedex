@@ -10,15 +10,29 @@ import { Router } from '@angular/router';
 })
 export class PokeBrowserComponent implements OnInit {
 
-  @Input() selectedOption: string;
+  @Input() selectedOption: string; 
 
   constructor(public pokeDataService: PokeDataService, private router: Router) {
    }
 
   ngOnInit(): void {
     /* Gather the data of all pokemons and store them in service*/
-    this.pokeDataService.getPokemonList();
+    /* only during first init */
+
+    if (!this.pokeDataService.isDataFetched){
+      this.pokeDataService.getPokemonList(); 
+      this.pokeDataService.isDataFetched = true;
+    }
+    
+   /* remove Load spinner after loading */
+    setTimeout(() => { 
+      this.pokeDataService.loadedFlag = true;
+  }, 3000); 
+
+
   }
+
+
 
    /* function to navigate to correct pokemon page */ 
   navigateTo(id: number){

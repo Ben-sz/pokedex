@@ -13,10 +13,12 @@ export class PokeDataService {
   pokemonList = [] as any;
   qurl : string;
   flagOnlyChecked : boolean = false;
+  loadedFlag: boolean = false;
+  searchString: string;
+  isDataFetched: boolean = false;
   
 
   constructor(private http : HttpClient) { }
-
   /* Returns list of pokemonTypes */
   fillTypeList(){
     return this.http.get('https://pokeapi.co/api/v2/type/')
@@ -29,6 +31,11 @@ export class PokeDataService {
   getPokemonByID( url: any){
     return fetch(url);
   }
+
+  getPokemonByName( name: string){
+    return fetch('https://pokeapi.co/api/v2/pokemon/' + name);
+  }
+
 
   getPokemonList(){
     const that = this;
@@ -43,12 +50,16 @@ export class PokeDataService {
                     pokemon.caught = Math.random() >= 0.5;
                     that.pushPokemons(pokemon);
                     })
-                  }
-                );
-              });
+              }
+          );
+        });
       }
     )});
+
+
+    return this.pokemonList;
   }
+
 
 
   pushPokemons(any){
@@ -63,9 +74,15 @@ export class PokeDataService {
     return of(this.pokemonList.find(poke => poke.id === id));
   }
 
+  /* finds selected pokemon and changes Caught flag */
   _catchPokemon(id: number){
     let foundIndex = this.pokemonList.findIndex(poke => poke.id === id);
     this.pokemonList[foundIndex].caught = true;
+  }
+
+  _releasePokemon(id: number){
+    let foundIndex = this.pokemonList.findIndex(poke => poke.id === id);
+    this.pokemonList[foundIndex].caught = false;
   }
 
   toggleCheck(){

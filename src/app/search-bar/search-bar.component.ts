@@ -18,10 +18,15 @@ export class SearchBarComponent implements OnInit {
 
   }
 
-
+  /* toggles Check for only caught filter */
   onlyCheckedUpdate(){
     this.pokeDataService.toggleCheck();
-    
   }
+
+  /* updates filtering string from input */
+  updateSearchString(item){
+    this.pokeDataService.searchString = item.target.value.toLowerCase();
+  }
+
 
 }

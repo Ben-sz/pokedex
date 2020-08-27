@@ -2,14 +2,14 @@
   margin-right: auto;
   margin-left: auto;
   align-items: center;
-  width: 100vw;
+  width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #e63946;
-
-  /* width: 100%; */
 }
+
+
 
 .header-wrapper h1{
   font-weight: 500;

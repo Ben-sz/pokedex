@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(values: any[], type: string, checkForCaught: boolean): any[] {
+  transform(values: any[], type: string, checkForCaught: boolean, searchString: string): any[] {
 
     console.log("check", checkForCaught)
     /* check for caught flag, if requested */
@@ -33,6 +33,15 @@ export class FilterPipe implements PipeTransform {
           return false;
         }
     });
+
+    if (searchString !== undefined){
+      values = values.filter( function (element){
+        return element.name.includes(searchString)
+      })
+    }
+
+
+
     console.log("meg itt", values)
     
     return values;
