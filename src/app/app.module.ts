@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input'; 
+import {MatButtonModule} from '@angular/material/button';
 import { PokeBrowserComponent } from './poke-browser/poke-browser.component';
 import { SearchBarComponent } from './search-bar/search-bar.component'; 
 import { FormsModule }   from '@angular/forms';
@@ -35,7 +36,8 @@ import { PokePageComponent } from './poke-page/poke-page.component';
     HttpClientModule,
     MatListModule,
     MatInputModule,
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

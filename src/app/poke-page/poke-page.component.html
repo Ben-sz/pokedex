@@ -1,12 +1,11 @@
 <p>poke-page works!</p>
 
-<div *ngIf="pokemon">
-  <h2>{{pokemon.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{pokemon.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="pokemon.name" placeholder="name"/>
-    </label>
-  </div>
-  
+<div class="pokemonpage-wrapper">
+      <div *ngIf="pokemon">
+        <h2>{{pokemon.name | uppercase}} Details</h2>
+        <div><span>id: </span>{{pokemon.id}}</div>
+        <div><span>Name: </span>{{pokemon.name}}</div>
+        <div><span>Weight: </span>{{pokemon.weight}}</div>
+      
+      </div>
 </div>

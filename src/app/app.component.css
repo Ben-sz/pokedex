@@ -4,11 +4,10 @@
   align-items: center;
   display: flex;
 
-  display: flex;
+
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background: red;
+  background: #e63946;
 }
 
 .header-wrapper h1{
@@ -20,8 +19,7 @@
 
 .header-wrapper a{
   font-size: 20px;
-  color: blanchedalmond;
+  color: #f1faee;
   margin-bottom: 5px;
   line-height: 130%;
-
 }

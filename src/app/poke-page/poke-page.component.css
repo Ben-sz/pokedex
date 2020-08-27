@@ -1,0 +1,13 @@
+.pokemonpage-wrapper{
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+
+  color: #1d3557;
+  font-weight: 600;
+  
+}
