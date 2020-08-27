@@ -12,7 +12,6 @@ import { Observable, of } from 'rxjs';
 export class PokeDataService {
   pokemonList = [] as any;
   qurl : string;
-
   flagOnlyChecked : boolean = true;
   
 
@@ -28,7 +27,6 @@ export class PokeDataService {
   }
 
   getPokemonByID( url: any){
-
     return fetch(url);
   }
 
