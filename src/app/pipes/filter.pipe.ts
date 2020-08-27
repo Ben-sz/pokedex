@@ -17,8 +17,6 @@ export class FilterPipe implements PipeTransform {
     /* else false */
 
     values = values.filter(function (element) {
-      
-
         if  (element.types[1] !== undefined && (element.types[0].type.name == type || element.types[1].type.name == type)){
           return true;
         }

@@ -14,6 +14,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FormsModule }   from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import {CommonModule} from "@angular/common";
+import { PokePageComponent } from './poke-page/poke-page.component';
 
 
 
@@ -23,7 +24,8 @@ import {CommonModule} from "@angular/common";
     MainComponent,
     PokeBrowserComponent,
     SearchBarComponent,
-    FilterPipe
+    FilterPipe,
+    PokePageComponent
   ],
   imports: [
     BrowserModule,
