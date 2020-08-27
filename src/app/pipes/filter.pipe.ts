@@ -11,7 +11,10 @@ export class FilterPipe implements PipeTransform {
 
 
 
-    /* values = values.filter(item => true); */
+    /* Filters list of pokemons depending on their type*/
+    /* If pokemon has 2 types check if any is equal to type*/
+    /* If pokemon has 1 types check if it is equal to type*/
+    /* else false */
 
     values = values.filter(function (element) {
       
@@ -30,7 +33,7 @@ export class FilterPipe implements PipeTransform {
     return values;
 
   }
-  /* item.types[0].type.name === 'flying' */
+  
 
 
 

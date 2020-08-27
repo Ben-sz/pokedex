@@ -8,7 +8,6 @@
     </div>
 
     <div class="typeList">
-
         <mat-selection-list #types [multiple]="false"  >
           <mat-list-option *ngFor="let pokeType of this.pokeTypes?.results" [value]="pokeType.name" >
             {{pokeType.name}}
