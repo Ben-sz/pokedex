@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { PokeDataService } from '../services/poke-data.service';
 
 
@@ -9,6 +9,9 @@ import { PokeDataService } from '../services/poke-data.service';
 })
 export class MainComponent implements OnInit {
   pokeTypes : any;
+
+  
+  @Output() filterInfo = new EventEmitter<any>();
 
   constructor(private pokeDataService: PokeDataService) { }
 
@@ -21,6 +24,11 @@ export class MainComponent implements OnInit {
       this.pokeDataService.fillTypeList().subscribe(data => {
         this.pokeTypes = data;
     });
+  }
+
+
+  modifyFilter(e){
+    this.filterInfo.emit(e);
   }
 
 }

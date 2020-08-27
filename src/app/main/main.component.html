@@ -4,13 +4,13 @@
 <div class="main-wrapper">
     <div class="browser-wrapper">
       <app-search-bar></app-search-bar>
-      <app-poke-browser></app-poke-browser>
+      <app-poke-browser #browser [selectedOption]="types.selectedOptions.selected[0]?.value"></app-poke-browser>
     </div>
 
     <div class="typeList">
 
-        <mat-selection-list #types [multiple]="false">
-          <mat-list-option *ngFor="let pokeType of this.pokeTypes?.results" [value]="pokeType.name">
+        <mat-selection-list #types [multiple]="false"  >
+          <mat-list-option *ngFor="let pokeType of this.pokeTypes?.results" [value]="pokeType.name" >
             {{pokeType.name}}
           </mat-list-option>
         </mat-selection-list>

@@ -11,6 +11,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input'; 
 import { PokeBrowserComponent } from './poke-browser/poke-browser.component';
 import { SearchBarComponent } from './search-bar/search-bar.component'; 
+import { FormsModule }   from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
+import {CommonModule} from "@angular/common";
+
 
 
 @NgModule({
@@ -18,15 +22,18 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     AppComponent,
     MainComponent,
     PokeBrowserComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
