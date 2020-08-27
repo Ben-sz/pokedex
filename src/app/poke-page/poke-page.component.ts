@@ -30,6 +30,9 @@ export class PokePageComponent implements OnInit {
       .subscribe(dataFromPokemon => this.pokemon = dataFromPokemon);
   }
 
+  catchPokemon(id: number){
+    this.pokeDataService._catchPokemon(id);
+  }
 
 
 

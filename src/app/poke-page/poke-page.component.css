@@ -17,21 +17,25 @@
   
 }
 
-
 .pokemonpage-wrapper h1{
-
   font-size: 30px;
   font-weight: 800;
 }
 
 .pokemonpage-wrapper h2{
-
-  
 line-height: 80%;
 }
 
 
 .pokemonpage-wrapper img{
   width: 200px;
+}
 
+.catcher{
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }

@@ -60,12 +60,13 @@ export class PokeDataService {
   }
 
   getPokemon(id: number): Observable<any>{
-
     return of(this.pokemonList.find(poke => poke.id === id));
-
-
   }
 
+  _catchPokemon(id: number){
+    let foundIndex = this.pokemonList.findIndex(poke => poke.id === id);
+    this.pokemonList[foundIndex].caught = true;
+  }
 
   
 
