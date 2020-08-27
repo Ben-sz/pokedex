@@ -1,11 +1,13 @@
-<p>poke-page works!</p>
 
 <div class="pokemonpage-wrapper">
-      <div *ngIf="pokemon">
-        <h2>{{pokemon.name | uppercase}} Details</h2>
-        <div><span>id: </span>{{pokemon.id}}</div>
-        <div><span>Name: </span>{{pokemon.name}}</div>
-        <div><span>Weight: </span>{{pokemon.weight}}</div>
+  <img *ngIf="pokemon.sprites.front_default"  [src]="pokemon.sprites.front_default" alt="">
+      <div *ngIf="pokemon" class="pokemonpage">
+
+        
+        <h1>{{pokemon.name | uppercase}} </h1>
+        <h2><span>#</span>{{pokemon.id}}</h2>
+        <h2><span>Name: </span>{{pokemon.name}}</h2>
+        <h2><span>Weight: </span>{{pokemon.weight}}</h2>
       
       </div>
 </div>

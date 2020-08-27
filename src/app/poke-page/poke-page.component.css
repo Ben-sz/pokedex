@@ -1,13 +1,37 @@
 .pokemonpage-wrapper{
+  margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
+
+  width: 400px;
+  height: 300px;
   align-items: center;
   display: flex;
 
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 
-  color: #1d3557;
-  font-weight: 600;
+  color: white;
+  background-color: #a8dadc;
+  border-radius: 40px;
   
+}
+
+
+.pokemonpage-wrapper h1{
+
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.pokemonpage-wrapper h2{
+
+  
+line-height: 80%;
+}
+
+
+.pokemonpage-wrapper img{
+  width: 200px;
+
 }
