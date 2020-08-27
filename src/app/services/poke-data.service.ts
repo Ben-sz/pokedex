@@ -47,7 +47,8 @@ export class PokeDataService {
                 that.getPokemonByID(jsonDat.results[element].url).then(resp =>
                   {
                     resp.json().then(function(pokemon){
-                    pokemon.caught = Math.random() >= 0.5;
+                      /* start with empty Pokedex */
+                    pokemon.caught = false;
                     that.pushPokemons(pokemon);
                     })
               }
