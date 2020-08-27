@@ -1,6 +1,3 @@
-<p>poke-browser works!</p>
-<p>{{selectedOption}}</p>
-
 
 <mat-selection-list #pokeItems [multiple]="false" (selectionChange)="navigateTo($event.option.value)">
   <mat-list-option *ngFor="let pokeItem of this.pokeDataService.pokemonList | filterType: selectedOption"

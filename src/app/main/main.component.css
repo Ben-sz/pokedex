@@ -29,9 +29,16 @@
 
 .typeList{
   display: flex;
+  flex-direction: column;
   /*   justify-content: flex-start; */
     margin-left: auto;
     margin-right: auto;
+
     width: 300px;
     justify-items: center;
 }
+
+/* .typeList h3{
+  margin-top: 10px;
+  line-height: 10%;
+} */
