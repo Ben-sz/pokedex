@@ -9,7 +9,7 @@ import { PokePageComponent } from './poke-page/poke-page.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent},
-  { path: 'pokePage', component: PokePageComponent}
+  { path: 'pokePage/:id', component: PokePageComponent}
 
 ];
 

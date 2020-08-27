@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
+import { Observable, of } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -39,16 +41,15 @@ export class PokeDataService {
                     resp.json().then(function(pokemon){
                     pokemon.caught = false;
                     that.pushPokemons(pokemon);
-    
                     })
-
                   }
-
                 );
               });
       }
     )});
   }
+
+
 
   pushPokemons(any){
     this.pokemonList.push(any);
@@ -57,6 +58,14 @@ export class PokeDataService {
   getPokemons(){
     return this.pokemonList;
   }
+
+  getPokemon(id: number): Observable<any>{
+
+    return of(this.pokemonList.find(poke => poke.id === id));
+
+
+  }
+
 
   
 

@@ -2,17 +2,17 @@
 <p>{{selectedOption}}</p>
 
 
-<mat-selection-list #pokeItems [multiple]="false">
+<mat-selection-list #pokeItems [multiple]="false" (selectionChange)="navigateTo($event.option.value)">
   <mat-list-option *ngFor="let pokeItem of this.pokeDataService.pokemonList | filterType: selectedOption"
   
-      [value]="pokeItem.name">
+      [value]="pokeItem.id">
       {{pokeItem.name}}
   </mat-list-option>
 </mat-selection-list>
 
 
 
-pokeTypes
+
 
 
 

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PokeDataService } from '../services/poke-data.service';
+import { Router } from '@angular/router'; 
+
 
 @Component({
   selector: 'app-poke-browser',
@@ -10,7 +12,7 @@ export class PokeBrowserComponent implements OnInit {
 
   @Input() selectedOption: string;
 
-  constructor(public pokeDataService: PokeDataService) {
+  constructor(public pokeDataService: PokeDataService, private router: Router) {
 
    }
 
@@ -27,6 +29,13 @@ export class PokeBrowserComponent implements OnInit {
 
   }
 
+   /* function to navigate to correct pokemon page */ 
+  navigateTo(id: number){
+
+    console.log(id);
+    this.router.navigate(['pokePage/',id]); 
+  
+  }
 
    
 }
