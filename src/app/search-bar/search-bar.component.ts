@@ -15,15 +15,12 @@ export class SearchBarComponent implements OnInit {
   constructor(public pokeDataService: PokeDataService  ) { }
 
   ngOnInit(): void {
-    this.onlyCheckedUpdate();
+
   }
 
 
   onlyCheckedUpdate(){
-    /* this.caughtFilter.emit(this.onlyCaught); */
-    
     this.pokeDataService.toggleCheck();
-    console.log("updatelt ertek", this.pokeDataService.flagOnlyChecked);
     
   }
 

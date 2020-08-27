@@ -7,12 +7,15 @@ export class FilterPipe implements PipeTransform {
 
   transform(values: any[], type: string, checkForCaught: boolean): any[] {
 
+    console.log("check", checkForCaught)
     /* check for caught flag, if requested */
     if (checkForCaught){
       values = values.filter(function (element) {
          return element.caught;
       });
     };
+
+
 
     /* Filters list of pokemons depending on their type*/
     /* If pokemon has 2 types check if any is equal to type*/

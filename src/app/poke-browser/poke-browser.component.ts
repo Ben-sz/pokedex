@@ -22,7 +22,7 @@ export class PokeBrowserComponent implements OnInit {
 
    /* function to navigate to correct pokemon page */ 
   navigateTo(id: number){
-    console.log(id);
+
     this.router.navigate(['pokePage/',id]); 
   }
 
