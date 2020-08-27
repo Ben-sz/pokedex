@@ -2,14 +2,14 @@
 
 
 <mat-selection-list #pokeItems [multiple]="false" (selectionChange)="navigateTo($event.option.value)">
-  <mat-list-option *ngFor="let pokeItem of this.pokeDataService.pokemonList | filterType: selectedOption:_caughtFilter "
+  <mat-list-option *ngFor="let pokeItem of this.pokeDataService.pokemonList | filterType: selectedOption:this._caughtFilter "
       [value]="pokeItem.id">
-      {{pokeItem.name}}
+      {{pokeItem.name}} {{pokeItem.caught}}
   </mat-list-option>
 </mat-selection-list>
 
 
-<h3>csak caught: {{_caughtFilter}}<h3>
+<h3>csak caught: {{this._caughtFilter}}<h3>
 
 
 

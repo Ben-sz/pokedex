@@ -3,7 +3,7 @@
 <div class="main-wrapper">
   
     <div class="browser-wrapper">
-      <app-search-bar #searchbar (caughtFilter)="browser.toggleFilter($event)" ></app-search-bar>
+      <app-search-bar #searchbar (caughtFilter)="browser.toggleFilter($event)"></app-search-bar>
       <app-poke-browser #browser [selectedOption]="types.selectedOptions.selected[0]?.value" [_caughtFilter]="searchbar.caughtFilter"></app-poke-browser>
     </div>
 
@@ -12,7 +12,7 @@
 
         <mat-selection-list #types [multiple]="false"  >
           <mat-list-option *ngFor="let pokeType of this.pokeTypes?.results" [value]="pokeType.name" >
-            {{pokeType.name}}
+            {{pokeType.name}} {{pokeType.caught}}
           </mat-list-option>
         </mat-selection-list>
 
