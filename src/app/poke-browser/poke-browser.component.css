@@ -35,7 +35,7 @@
 
 .pokecard h2{
   color: #f1faee;
-  opacity: 50%;
+  opacity: 0.5;
   margin-right: 3px;
 
 }
@@ -58,10 +58,10 @@
 
 
 .isCaught{
-  opacity: 100%;
+  opacity: 1;
 }
 
 .notCaught{
-  opacity: 50%;
+  opacity: 0.5;
 }
 
